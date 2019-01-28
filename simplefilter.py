@@ -1,3 +1,4 @@
+import csv
 from datetime import datetime
 
 currenttime = datetime.now()
@@ -19,12 +20,15 @@ times = []
 # last element is /n
 
 
+wr = csv.writer(outputfile,dialect='excel')
+
 
 for line in inputfile:
 	row = line.split(' ')
 	row = row[:-9] + row[-3:-1]
 	print(row)
-
+	#outputfile.write(row)
+	wr.writerow(row)
 
 
 
