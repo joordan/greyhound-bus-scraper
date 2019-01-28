@@ -58,14 +58,28 @@ for line in inputfile:
 
 # calculate minutes left
 
+	stop_dep = departure[1:]
+
+	h, m = stop_dep.split(':')
+	depsecs = int(h) * 3600 + int(m) * 60
+	mins = depsecs / 60
+
+
+
 	time_now = currenttime.strftime('%-H:%M')
+	h2, m2 = time_now.split(':')
+	depsecs = int(h2) * 3600 + int(m2) * 60
+	minsnow = depsecs / 60
+
+	mins_until_depart = mins - minsnow
 
 
 # print all
 	print('bus#:',row[0])
 	print('destination:',destination)
-	print('dep:',departure[1:])
-	print('current time:',time_now)
+	print('dep:',departure[1:],'in mins',int(mins))
+	print('current time:',time_now,'in mins',int(minsnow))
+	print('departing in',int(mins_until_depart),'minutes')
 
 
 
