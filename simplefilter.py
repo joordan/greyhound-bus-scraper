@@ -26,9 +26,14 @@ wr = csv.writer(outputfile,dialect='excel')
 for line in inputfile:
 	row = line.split(' ')
 	row = row[:-9] + row[-3:-1]
+	time = row[-2]
+	time = time[1:]
+	row[-2] = time + " " + row[-1]
+	del row[-1]
+	row[1] =' '.join(row[1:-1])
+	del row[2:-1]
 	print(row)
 	#outputfile.write(row)
 	wr.writerow(row)
-
 
 
