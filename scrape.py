@@ -18,6 +18,10 @@ driver.get("http://63.247.92.82/stops/893740/Stockton_CA/arriving")
 #driver.implicitly_wait(10)
 
 
+
+#cheat count for Stockton
+count = 0
+
 odd = driver.find_elements_by_class_name("odd")
 even = driver.find_elements_by_class_name("even")
 
@@ -51,15 +55,21 @@ for x in departures:
 
 	#temparr is html row temparr[1] is location
 	temparr = x.text.split(' ')
-
-
+	count = count + 1
+	meridiem = temparr[-1] # [am|pm]
+	print(meridiem)
 #separation needs to be done here
 
 	for row in temparr:
 		row = row.replace('\n',' ')
 		outputfile.write(row)
 		outputfile.write(' ')
-	outputfile.write(' today')
+
+	# cheat for Stockton departure, remove for other cities/stops
+	if (count > 6 and 'am' in meridiem):
+		outputfile.write(' tomorrow')
+	else:
+		outputfile.write(' today')
 
 	print(temparr)
 
@@ -96,3 +106,4 @@ driver.close()
 
 
 #print(even)
+print(count,'deps')
