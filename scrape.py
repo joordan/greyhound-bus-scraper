@@ -58,8 +58,8 @@ for x in departures:
 	for row in temparr:
 		row = row.replace('\n',' ')
 		outputfile.write(row)
-		outputfile.write(' today')
 		outputfile.write(' ')
+	outputfile.write(' today')
 
 	print(temparr)
 
@@ -87,8 +87,8 @@ for x in odd:
 	for row in nextday:
 		row = row.replace('\n',' ')
 		outputfile.write(row)
-		outputfile.write(' tomorrow')
 		outputfile.write(' ')
+	outputfile.write(' tomorrow')
 
 
 
