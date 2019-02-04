@@ -1,5 +1,6 @@
 import numpy as np
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 
 outputfile = open("output.txt","w+",encoding='utf-8')
 
@@ -20,15 +21,25 @@ driver.get("http://63.247.92.82/stops/893740/Stockton_CA/arriving")
 odd = driver.find_elements_by_class_name("odd")
 even = driver.find_elements_by_class_name("even")
 
+print('odd')
+print(odd)
+
+
 
 
 
 a = np.array(odd)
 b = np.array(even)
-c = np.empty((a.size + b.size,), dtype=a.dtype)
 
+
+
+# interweave 2 list ex. [1,3] & [2,4] becomes [1,2,3,4]
+c = np.empty((a.size + b.size,), dtype=a.dtype)
 c[0::2] = a
 c[1::2] = b
+
+
+
 
 departures = c.tolist()
 
@@ -38,14 +49,16 @@ for x in departures:
 
 #	print(x.text) # has breaks
 
+	#temparr is html row temparr[1] is location
 	temparr = x.text.split(' ')
-	print(temparr[1])
+
 
 #separation needs to be done here
 
 	for row in temparr:
 		row = row.replace('\n',' ')
 		outputfile.write(row)
+		outputfile.write(' today')
 		outputfile.write(' ')
 
 	print(temparr)
@@ -53,4 +66,33 @@ for x in departures:
 	outputfile.write('\n') # start new line for each row
 
 
+select = Select(driver.find_element_by_id('select-date-stop'))
+select.select_by_index(1)
+odd = driver.find_elements_by_class_name("odd")
+
+nextday = []
+
+print('\nTomorrow')
+
+
+
+#for x in odd:
+#	print(x.text)
+
+for x in odd:
+	nextday = x.text.split(' ')
+	print(nextday)
+
+
+	for row in nextday:
+		row = row.replace('\n',' ')
+		outputfile.write(row)
+		outputfile.write(' tomorrow')
+		outputfile.write(' ')
+
+
+
 driver.close()
+
+
+#print(even)
