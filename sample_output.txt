@@ -1,0 +1,11 @@
+1431 Seattle, WA → Los Angeles, CA A09:25 am D09:35 am A09:28 am D09:46 am  today
+6879 Sacramento, CA → Los Angeles, CA A12:15 pm D12:25 pm A01:44 pm D02:03 pm  today
+1429 Vancouver, BC → Los Angeles, CA A03:35 pm D03:45 pm A03:32 pm D03:47 pm  today
+1436 Los Angeles, CA → Vancouver, BC A04:40 pm D04:50 pm A04:53 pm D05:03 pm  today
+9603 Sacramento, CA → Los Angeles, CA A07:40 pm D07:50 pm A07:40 pm* D07:50 pm*  today
+1440 Los Angeles, CA → Vancouver, BC A08:15 pm D08:25 pm A08:15 pm D08:25 pm  today
+6818 Los Angeles, CA → Sacramento, CA A09:15 pm D09:25 pm A09:15 pm D09:25 pm  today
+6813 Sacramento, CA → Los Angeles, CA A11:15 pm D11:25 pm A11:15 pm* D11:25 pm*  today
+9302 Los Angeles, CA → Sacramento, CA A11:50 pm D12:01 am A12:23 am D12:34 am  tomorrow
+1439 Portland, OR → Los Angeles, CA A11:55 pm D12:05 am A11:55 pm D12:05 am  tomorrow
+1420 Los Angeles, CA → Vancouver, BC A12:40 am D12:50 am A12:40 am* D12:50 am*  tomorrow
