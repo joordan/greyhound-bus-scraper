@@ -48,8 +48,7 @@ wr.writerow(header)
 #Filters the scraped data and takes out unneeded information
 for index, line in enumerate(inputfile):
 	row = line.split(' ')
-	row = row[:-8] + row[-2:]
-	print(row)
+	row = row[:-8] + row[-3:-1]
 	time = row[-1] + " " + row[-2]
 	time = time[1:]
 	row[-2] = time
