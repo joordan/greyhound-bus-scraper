@@ -108,7 +108,6 @@ if (options > 1):
                 for row in nextday:
                         row = row.replace('\n',' ')
                         outputfile.write(row)
-
-
+			outputfile.write(' ')
 driver.close()
 
