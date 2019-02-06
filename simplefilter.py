@@ -16,7 +16,7 @@ faketime = "2019-02-06 10:40 AM"
 faketime = datetime.datetime.strptime(faketime, "%Y-%m-%d %I:%M %p")
 
 #Opens txt file containg scraped data
-filename = "output3.txt"
+filename = "output.txt"
 inputfile = open(filename,"r",encoding='utf-8')
 outputfile = open("filtered.txt","w+")
 outputcsv = open("data.csv", "w")
@@ -31,22 +31,23 @@ header = ["Schedule", "Origin and Destination", "Departure"]
 wr.writerow(header)
 
 #FOR OUTPUT.TXT
-# for index, line in enumerate(inputfile):
-# 	row = line.split(' ')
-# 	row = row[:-9] + row[-3:-1]
-# 	time = row[-2]
-# 	time = time[1:]
-# 	row[-2] = time + " " + row[-1]
-# 	del row[-1]
-# 	row[1] =' '.join(row[1:-1])
-# 	del row[2:-1]
-# 	row[2] = row[2].replace("*", "")
-# 	line = row
+for index, line in enumerate(inputfile):
+	row = line.split(' ')
+	row = row[:-9] + row[-3:-1]
+	time = row[-2]
+	time = time[1:]
+	row[-2] = time + " " + row[-1]
+	del row[-1]
+	row[1] =' '.join(row[1:-1])
+	del row[2:-1]
+	row[2] = row[2].replace("*", "")
+	line = row
+# 	print(line)
 
 
 #FOR OUTPUT2.TXT
 #Filters the scraped data and takes out unneeded information
-for index, line in enumerate(inputfile):
+# for index, line in enumerate(inputfile):
 # 	row = line.split(' ')
 # 	row = row[:-8] + row[-3:-1]
 # 	time = row[-1] + " " + row[-2]
@@ -57,17 +58,17 @@ for index, line in enumerate(inputfile):
 # 	del row[2:-1]
 # 	row[2] = row[2].replace("*", "")
 # 	line = row	
-	row = line.split(' ')
-	row = row[:-8] + row[-2:]
-	time = " ".join(row[-2:])
-	time = time[1:]
-	row[-2] = time
-	del row[-1]
-	row[1] =' '.join(row[1:-1])
-	del row[2:-1]
-	row[2] = row[2].replace("*", "")
-	row[2] = row[2].replace("\n", "")
-	line = row
+# 	row = line.split(' ')
+# 	row = row[:-8] + row[-2:]
+# 	time = " ".join(row[-2:])
+# 	time = time[1:]
+# 	row[-2] = time
+# 	del row[-1]
+# 	row[1] =' '.join(row[1:-1])
+# 	del row[2:-1]
+# 	row[2] = row[2].replace("*", "")
+# 	row[2] = row[2].replace("\n", "")
+# 	line = row
 
 	#Takes scraped time and adds the current Year-Month-Day
 	depart_string = formatYMD + " " + row[2]

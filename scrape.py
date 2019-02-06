@@ -105,9 +105,9 @@ if (options > 1):
                 nextday = x.text.split(' ')
 
 
-                for row in nextday:
-                        row = row.replace('\n',' ')
-                        outputfile.write(row)
-			outputfile.write(' ')
+        for row in nextday:
+                row = row.replace('\n',' ')
+                outputfile.write(row)
+                outputfile.write(' ')
 driver.close()
 
