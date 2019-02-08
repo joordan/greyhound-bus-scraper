@@ -111,11 +111,10 @@ for index, line in enumerate(schedule):
  		continue
 	if times[index] == "End":
 		break
-	elif dates[index] >= faketime:
+	elif dates[index] >= currentOverallDate:
 		print(schedule[index])
 		wr.writerow(schedule[index])
 		
-
 
 
 
