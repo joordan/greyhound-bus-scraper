@@ -13,7 +13,7 @@ driver = webdriver.Chrome(chrome_options=options)
 
 
 #driver.get("https://www.google.com")
-driver.get("http://63.247.92.82/stops/893740/Stockton_CA/arriving")
+driver.get("http://75.126.140.163/stops/893740/Stockton_CA/arriving")
 
 #driver.implicitly_wait(10)
 
