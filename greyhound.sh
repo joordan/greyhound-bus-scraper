@@ -1,4 +1,8 @@
 #!/bin/sh
+#
+# add to crontab:
+# @reboot sudo -u username /bin/sh /home/username/path/to/greyhound.sh
+#
 
 while true
 do
